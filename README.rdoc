@@ -1,7 +1,8 @@
 RGB 2016
 == README
 
-kolejne zmiany do projektu
+
+kolejne zmiany do proketu po zmianach
 
 
 This README would normally document whatever steps are necessary to get the
