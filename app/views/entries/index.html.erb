@@ -1,0 +1,15 @@
+<h1>Beata</h1>
+<h2>Programuje ;)</h2>
+<h1>My Rails Girls Diary</h1>
+  <ul>
+<% for entry in @entries %>
+  <li>
+      <h2><%= link_to(entry.title, entry_path(entry)) %></h2>
+      <h2><%= link_to(entry.title, entry_url(entry)) %></h2>
+      <p><%= entry.date %></p>
+      <p><%= entry.contents %></p>
+      <p><%= link_to("Edit this entry", edit_entry_path(entry)) %></p>
+  </li>
+<% end %>
+  </ul>
+
