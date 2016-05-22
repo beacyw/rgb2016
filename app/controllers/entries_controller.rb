@@ -1,9 +1,10 @@
 class EntriesController < ApplicationController
+  before_action :set_entry, only: [:show, :edit, :update]
+  
   def index
     @entries = Entry.all
   end
   def show
-      @entry = Entry.find(params[:id])
   end
   def new
       @entry = Entry.new
@@ -13,10 +14,10 @@ class EntriesController < ApplicationController
       redirect_to @entry
   end
   def edit
-      @entry = Entry.find(params[:id])
+      
   end
   def update
-      @entry = Entry.find(params[:id])
+     
       
     if @entry.update(entry_params)
       redirect_to @entry
@@ -31,4 +32,7 @@ class EntriesController < ApplicationController
     params.require(:entry).permit(:title, :contents)
   end
   
+  def set_entry
+    @entry = Entry.find(params[:id])
+  end
 end
